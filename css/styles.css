@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/*обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, header, aside, footer {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*-------------*/
+
+
+.wrapper {
+  display: grid;
+  grid-template: 50px 1fr 100px / 1fr;
+  min-height: 100%;
+  background: url("../img/background.png") center / cover fixed;
+}
+
+#header__nav {
+  display: grid;
+  grid-template: 1fr / auto 1fr auto auto;
+  column-gap: 30px;
+  align-items: center;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.fixed {
+  background-color: rgb(46, 46, 46);
+  transition: all 0.3s ease;
+}
+
+#header__nav a {
+  color: white;
+}
+
+.header__link {
+  font-size: 20px;
+}
+
+.header__link:hover {
+  text-decoration: underline orange 3px;
+}
+
+.header__logo {
+  font-size: 40px;
+}
+
+.adress {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.adress__title {
+  font-size: 70px;
+}
+
+.adress__subtitle {
+  font-size: 40px;
+}
+
+.article {
+  padding: 50px 10%;
+  background-color: #fff;
+  color: rgb(46, 46, 46);
+}
+
+.article__about {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  gap: 30px;
+}
+
+.article__image {
+position: relative;
+}
+
+.article__image img {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.article__title {
+  font-size: 40px;
+}
+
+.article__text {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.article__worlds {
+  margin-top: 70px;
+}
+
+@media (max-width: 1000px) {
+  .article__about {
+    grid-template: 1fr 1fr / 1fr;
+  }
+
+  .article__text {
+    text-align: center;
+  }
+}
+
+.worlds {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr 1fr;
+  gap: 50px;
+  margin-top: 100px;
+}
+
+.worlds__world {
+  display: grid;
+  justify-items: center;
+  gap: 15px;
+  grid-template-rows: auto 40px 1fr auto;
+}
+.worlds__title {
+  font-size: 40px;
+}
+
+.worlds__description {
+  text-align: center;
+  font-size: 20px;
+}
+
+.worlds__image img {
+  width: 70px;
+}
+
+.worlds__price {
+  display: grid;
+  font-size: 30px;
+  background-color: orange;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .worlds {
+    grid-template: 1fr 1fr 1fr / 1fr;
+    gap: 150px;
+  }
+}
+
+.join {
+  height: 300px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.join__link {
+  background-color: rgb(46, 46, 46);
+  color: rgb(255, 255, 255);
+  border: 20px solid white;
+  padding: 25px 250px;
+  font-size: 25px;
+}
+
+@media (max-width: 1000px) {
+  .join__link {
+    border: 10px solid white;
+    padding: 20px 150px;
+    font-size: 20px;
+  }
+}
+
+@keyframes shake-join__link {
+  0% { transform: translate(-1px, -1px); }
+  33% { transform: translate(1px, 0px); }
+  66% { transform: translate(0px, 1px); }
+  100% { transform: translate(-1px, 1px); }
+}
+
+.join__link:hover {
+  animation: shake-join__link .1s infinite alternate;
+}
+
+footer {
+  background-color: rgb(46, 46, 46);
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer h2 {
+  font-size: 20px;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer section {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer div a:hover {
+  color: orange;
+}
+
+@media (max-width: 1000px) {
+  #header__nav {
+    z-index: -10;
+  }
+}
